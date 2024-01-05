@@ -23,7 +23,7 @@ pre_set()
 		wwan_num=`uci get firewall.@zone[$num].network |grep -w wwan |wc -l`
 		wwan6_num=`uci get firewall.@zone[$num].network |grep -w wwan6 |wc -l`
 		if [ "$wwan_num" = "0" ]; then
-			uci add_list firewall.@zone[$num].network='wan'
+			uci add_list firewall.@zone[$num].network='wwan'
 		fi
 		if [ "$ipv6" = 1 ]; then
 			if [ "$wwan6_num" = "0" ]; then
